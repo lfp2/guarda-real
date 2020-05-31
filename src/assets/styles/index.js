@@ -14,7 +14,6 @@ export const TextCenter = styled.Text`
   text-align: center;
 `;
 
-
 export const Button = styled.TouchableOpacity`
   background: #ffffff;
   width: 315px;
@@ -26,7 +25,7 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const PrimaryButton = styled(Button)`
-  background: #CA0024;
+  background: #ca0024;
 `;
 
 export const TextButton = styled(TextCenter)`
@@ -56,11 +55,4 @@ export const HeaderImage = styled.Image`
   height: 50%;
   position: absolute;
   top: 0px;
-`;
-
-export const TopView = styled.View`
-  flex: 1;
-  top: 0%;
-  justify-content: flex-start;
-  align-items: center;
 `;
