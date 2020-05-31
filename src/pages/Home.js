@@ -15,17 +15,28 @@ import {
   ArrowIcon,
 } from "../assets/styles/modal";
 import { tutorial } from "../assets/strings/tutorial";
+import Header from "../components/Header";
 
 import { ScreenCenter } from "../assets/styles";
-import { BottomView, HomeButton, HomeTextButton } from "../assets/styles/home";
+import {
+  BottomView,
+  HomeButton,
+  HomeTextButton,
+  HomeButtonIcon,
+  LetterIcon,
+  LetterText,
+  TitleText,
+} from "../assets/styles/home";
 
 export default function Home() {
   const [childName, setChildName] = useState("Vinicius");
+  const [childGender, setChildGender] = useState("Príncipe");
   const [points, setPoints] = useState("0");
   const [money, setMoney] = useState("0,00");
   const [modalVisible, setModalVisible] = useState(true);
   const [id, setId] = useState(0);
   const message = tutorial("Vinicius", "Príncipe");
+  const castelo = require("../assets/images/castelo.png");
 
   const ModalScreen = () => {
     return (
@@ -65,16 +76,23 @@ export default function Home() {
   return (
     <ScreenCenter>
       {modalVisible && <ModalScreen />}
+      <Header title="Castelo" icon="castelo" />
       <BottomView>
+        <TitleText>{childGender} {childName} </TitleText>
         <HomeButton>
+          <HomeButtonIcon source={require("../assets/images/diamante.png")} />
           <HomeTextButton>{points} pontos</HomeTextButton>
         </HomeButton>
         <HomeButton>
+          <HomeButtonIcon source={require("../assets/images/moeda.png")} />
           <HomeTextButton>R$ {money}</HomeTextButton>
         </HomeButton>
         <HomeButton>
+          <HomeButtonIcon source={require("../assets/images/tesouro.png")} />
           <HomeTextButton>Tesouro</HomeTextButton>
         </HomeButton>
+        <LetterIcon source={require("../assets/images/letter.png")} />
+        <LetterText>Nova meta</LetterText>
       </BottomView>
     </ScreenCenter>
   );

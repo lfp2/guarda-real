@@ -56,7 +56,7 @@ export const BaloonImage = styled.ImageBackground`
 
 export const Container = styled.View`
   position: absolute;
-  background: rgba(100, 100, 100, 0.3);
+  background: rgba(100, 100, 100, 0.5);
   width: 100%;
   height: 100%;
   z-index: 100;
