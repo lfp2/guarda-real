@@ -5,12 +5,22 @@ import {
   ModelIcon,
   ViewStyle,
 } from "../assets/styles/header";
+import { TouchableWithoutFeedback } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Header({ title, icon }) {
+  const navigation = useNavigation();
+
+  const handleMapPress = () => {
+    navigation.navigate("Mapa");
+  };
+
   return (
     <ViewCenter>
       <ViewStyle>
-        <ModelIcon source={require("../assets/images/mapa_fechado.png")} />
+        <TouchableWithoutFeedback onPress={handleMapPress}>
+          <ModelIcon source={require("../assets/images/mapa_fechado.png")} />
+        </TouchableWithoutFeedback>
       </ViewStyle>
       <Title>{title}</Title>
       <ViewStyle>

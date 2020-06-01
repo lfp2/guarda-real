@@ -6,6 +6,7 @@ import LoginScreen from "./pages/Login";
 import AutheticatedScreen from "./pages/Authenticated";
 import HomeScreen from "./pages/Home";
 import MetasScreen from "./pages/Metas";
+import MapaScreen from "./pages/Mapa";
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,7 @@ export default function Routes() {
           <Stack.Screen name="Autheticated" component={AutheticatedScreen} />
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Metas" component={MetasScreen} />
+          <Stack.Screen name="Mapa" component={MapaScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     );
