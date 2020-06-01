@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TouchableWithoutFeedback, View } from "react-native";
 import {
   HoracioImage,
   ViewButton,
@@ -28,6 +29,8 @@ import {
   TitleText,
 } from "../assets/styles/home";
 
+import { useNavigation } from "@react-navigation/native";
+
 export default function Home() {
   const [childName, setChildName] = useState("Vinicius");
   const [childGender, setChildGender] = useState("Príncipe");
@@ -37,6 +40,12 @@ export default function Home() {
   const [id, setId] = useState(0);
   const message = tutorial("Vinicius", "Príncipe");
   const castelo = require("../assets/images/castelo.png");
+
+  const navigation = useNavigation();
+
+  const handleLetterPress = () => {
+    navigation.navigate("Metas");
+  };
 
   const ModalScreen = () => {
     return (
@@ -78,7 +87,9 @@ export default function Home() {
       {modalVisible && <ModalScreen />}
       <Header title="Castelo" icon="castelo" />
       <BottomView>
-        <TitleText>{childGender} {childName} </TitleText>
+        <TitleText>
+          {childGender} {childName}
+        </TitleText>
         <HomeButton>
           <HomeButtonIcon source={require("../assets/images/diamante.png")} />
           <HomeTextButton>{points} pontos</HomeTextButton>
@@ -91,8 +102,12 @@ export default function Home() {
           <HomeButtonIcon source={require("../assets/images/tesouro.png")} />
           <HomeTextButton>Tesouro</HomeTextButton>
         </HomeButton>
-        <LetterIcon source={require("../assets/images/letter.png")} />
-        <LetterText>Nova meta</LetterText>
+        <TouchableWithoutFeedback onPress={handleLetterPress}>
+          <View>
+            <LetterIcon source={require("../assets/images/letter.png")} />
+            <LetterText>Nova meta</LetterText>
+          </View>
+        </TouchableWithoutFeedback>
       </BottomView>
     </ScreenCenter>
   );

@@ -39,7 +39,7 @@ export const HomeTextButton = styled.Text`
 `;
 
 export const LetterIcon = styled.Image`
-  height: 20%;
+  height: 80px;
   resize-mode: contain;
   margin-top: 10px;
 `;
@@ -55,4 +55,3 @@ export const TitleText = styled.Text`
   text-align: center;
   margin: 5px;
 `;
-

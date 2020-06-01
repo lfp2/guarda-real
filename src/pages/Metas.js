@@ -5,12 +5,25 @@ import Header from "../components/Header";
 import {
   BottomView
 } from "../assets/styles/home";
+import { CardMetas } from "../components/CardMetas";
 
-export  default function Metas() {
+import { useNavigation } from "@react-navigation/native";
+import { CircleButton, PlusIcon } from "../assets/styles/cards";
+
+export default function Metas() {
     return (
       <ScreenCenter>
         <Header title="Metas Reais" icon="letter" />
-        <BottomView></BottomView>
+        <BottomView>
+          <CardMetas
+            idCard={"1"}
+            nameCard={"Nintendo Switch"}
+            metaGoal={"4.000,00"}
+          />
+          <CircleButton>
+              <PlusIcon name="plus" />
+          </CircleButton>
+        </BottomView>
       </ScreenCenter>
     );
 }

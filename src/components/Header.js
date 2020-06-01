@@ -17,6 +17,9 @@ export default function Header({ title, icon }) {
         {icon == "castelo" && (
           <ModelIcon source={require("../assets/images/castelo.png")} />
         )}
+        {icon == "letter" && (
+          <ModelIcon source={require("../assets/images/letter.png")} />
+        )}
       </ViewStyle>
     </ViewCenter>
   );
