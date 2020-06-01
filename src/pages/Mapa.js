@@ -11,6 +11,10 @@ import {
   DiamondIcon,
   DiamondText,
   ViewStyleDiamonds,
+  MapaIcon,
+  MapaText,
+  CasteloView,
+  MetasView,
 } from "../assets/styles/mapa";
 import { TouchableWithoutFeedback } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -24,6 +28,14 @@ export default function Mapa() {
     navigation.pop();
   };
 
+  const handleLetterPress = () => {
+    navigation.navigate("Metas");
+  };
+
+  const handleCasteloPress = () => {
+    navigation.navigate("Home");
+  };
+
   return (
     <MapaBackground source={require("../assets/images/mapa_background.png")}>
       <ViewCenter>
@@ -33,9 +45,17 @@ export default function Mapa() {
         <Title>Mapa</Title>
         <ViewStyleDiamonds>
           <DiamondIcon source={require("../assets/images/diamante.png")} />
-          <DiamondText>{diamonds} </DiamondText>
+          <DiamondText>{diamonds}</DiamondText>
         </ViewStyleDiamonds>
       </ViewCenter>
+      <CasteloView onPress={handleCasteloPress}>
+        <MapaIcon source={require("../assets/images/castelo.png")} />
+        <MapaText>Castelo</MapaText>
+      </CasteloView>
+      <MetasView onPress={handleLetterPress}>
+        <MapaIcon source={require("../assets/images/letter.png")} />
+        <MapaText>Metas Reais</MapaText>
+      </MetasView>
       <TrilhaBackground source={require("../assets/images/trilha.png")} />
       <TreasureImage source={require("../assets/images/x.png")} />
     </MapaBackground>

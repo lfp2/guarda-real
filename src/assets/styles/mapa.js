@@ -69,3 +69,30 @@ export const DiamondText = styled.Text`
   font-weight: bold;
   margin-right: 10px;
 `;
+
+export const MapaIcon = styled.Image`
+  height: 120px;
+  resize-mode: contain;
+  z-index: 104;
+`;
+
+export const MapaText = styled.Text`
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: -20px;
+  z-index: 104;
+`;
+
+export const CasteloView = styled.TouchableOpacity`
+  width: 30%;
+  left: 10%;
+  align-items: center;
+  z-index: 105;
+`;
+
+export const MetasView = styled.TouchableOpacity`
+  width: 40%;
+  left: 30%;
+  align-items: center;
+  z-index: 105;
+`;
