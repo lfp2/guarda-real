@@ -17,9 +17,9 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Mapa() {
   const [diamonds, setDiamonds] = useState("50");
-  
+
   const navigation = useNavigation();
-  
+
   const handleMapPress = () => {
     navigation.pop();
   };

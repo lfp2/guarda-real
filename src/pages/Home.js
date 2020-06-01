@@ -27,6 +27,7 @@ import {
   LetterIcon,
   LetterText,
   TitleText,
+  TextureBackground,
 } from "../assets/styles/home";
 
 import { useNavigation } from "@react-navigation/native";
@@ -87,27 +88,29 @@ export default function Home() {
       {modalVisible && <ModalScreen />}
       <Header title="Castelo" icon="castelo" />
       <BottomView>
-        <TitleText>
-          {childGender} {childName}
-        </TitleText>
-        <HomeButton>
-          <HomeButtonIcon source={require("../assets/images/diamante.png")} />
-          <HomeTextButton>{points} pontos</HomeTextButton>
-        </HomeButton>
-        <HomeButton>
-          <HomeButtonIcon source={require("../assets/images/moeda.png")} />
-          <HomeTextButton>R$ {money}</HomeTextButton>
-        </HomeButton>
-        <HomeButton>
-          <HomeButtonIcon source={require("../assets/images/tesouro.png")} />
-          <HomeTextButton>Tesouro</HomeTextButton>
-        </HomeButton>
-        <TouchableWithoutFeedback onPress={handleLetterPress}>
-          <View>
-            <LetterIcon source={require("../assets/images/letter.png")} />
-            <LetterText>Nova meta</LetterText>
-          </View>
-        </TouchableWithoutFeedback>
+        <TextureBackground source={require("../assets/images/Textura.png")}>
+          <TitleText>
+            {childGender} {childName}
+          </TitleText>
+          <HomeButton>
+            <HomeButtonIcon source={require("../assets/images/diamante.png")} />
+            <HomeTextButton>{points} pontos</HomeTextButton>
+          </HomeButton>
+          <HomeButton>
+            <HomeButtonIcon source={require("../assets/images/moeda.png")} />
+            <HomeTextButton>R$ {money}</HomeTextButton>
+          </HomeButton>
+          <HomeButton>
+            <HomeButtonIcon source={require("../assets/images/tesouro.png")} />
+            <HomeTextButton>Tesouro</HomeTextButton>
+          </HomeButton>
+          <TouchableWithoutFeedback onPress={handleLetterPress}>
+            <View>
+              <LetterIcon source={require("../assets/images/letter.png")} />
+              <LetterText>Nova meta</LetterText>
+            </View>
+          </TouchableWithoutFeedback>
+        </TextureBackground>
       </BottomView>
     </ScreenCenter>
   );

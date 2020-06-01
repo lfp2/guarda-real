@@ -44,6 +44,12 @@ export const LetterIcon = styled.Image`
   margin-top: 10px;
 `;
 
+export const TextureBackground = styled.ImageBackground`
+  height: 100%;
+  resize-mode: repeat;
+  align-items: center;
+`;
+
 export const LetterText = styled.Text`
   font-size: 24px;
   text-align: center;
